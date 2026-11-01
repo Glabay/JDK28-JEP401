@@ -1,4 +1,4 @@
-package dev.midnightcoder.values;
+package dev.midnightcoder.cgm;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class Application {
 
-	static void main(String[] args) {
+	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
 

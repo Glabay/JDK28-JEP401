@@ -1,4 +1,4 @@
-package dev.midnightcoder.cgm.readings;
+package dev.midnightcoder.cgm.readings.dto;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;

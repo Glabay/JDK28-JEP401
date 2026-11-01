@@ -1,4 +1,4 @@
-package dev.midnightcoder.cgm.readings;
+package dev.midnightcoder.cgm.readings.dto;
 
 import java.time.Instant;
 import java.util.UUID;
