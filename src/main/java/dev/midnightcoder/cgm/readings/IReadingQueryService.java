@@ -1,5 +1,6 @@
 package dev.midnightcoder.cgm.readings;
 
+import dev.midnightcoder.cgm.readings.dto.ReadingHistoryResult;
 import dev.midnightcoder.cgm.readings.dto.ReadingView;
 
 import java.time.Instant;
