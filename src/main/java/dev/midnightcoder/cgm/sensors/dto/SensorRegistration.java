@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
  * @website <a href="https://midnightcoder.dev">Midnight Coder</a>
  * @since 2026-10-31
  */
-public record SensorRegistration(
+public value record SensorRegistration(
     String serialNumber,
     String manufacturer,
     String model,

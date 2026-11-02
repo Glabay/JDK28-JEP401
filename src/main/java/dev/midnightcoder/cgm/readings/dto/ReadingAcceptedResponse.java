@@ -3,7 +3,7 @@ package dev.midnightcoder.cgm.readings.dto;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-public record ReadingAcceptedResponse(
+public value record ReadingAcceptedResponse(
     UUID batchId,
     Integer acceptedCount,
     Integer duplicateCount,

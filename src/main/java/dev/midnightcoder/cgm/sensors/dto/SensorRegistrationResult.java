@@ -10,7 +10,7 @@ import java.util.UUID;
  * @website <a href="https://midnightcoder.dev">Midnight Coder</a>
  * @since 2026-10-31
  */
-public record SensorRegistrationResult(
+public value record SensorRegistrationResult(
     UUID sensorId,
     String status,
     LocalDateTime registeredAt

@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
  * @website <a href="https://midnightcoder.dev">Midnight Coder</a>
  * @since 2026-10-31
  */
-public record CreateReadingRequest(
+public value record CreateReadingRequest(
     @Positive
     Long sequenceNumber,
 

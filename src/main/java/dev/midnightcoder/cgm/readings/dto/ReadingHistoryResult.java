@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
-public record ReadingHistoryResult(
+public value record ReadingHistoryResult(
     UUID sensorId,
     LocalDateTime from,
     LocalDateTime to,

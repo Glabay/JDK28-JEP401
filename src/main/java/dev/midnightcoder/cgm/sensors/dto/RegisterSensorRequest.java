@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
  * @website <a href="https://midnightcoder.dev">Midnight Coder</a>
  * @since 2026-10-31
  */
-public record RegisterSensorRequest(
+public value record RegisterSensorRequest(
 
     @NotBlank(message = "Serial number is required")
     @Size(max = 100)
