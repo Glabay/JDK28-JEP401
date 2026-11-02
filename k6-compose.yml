@@ -1,0 +1,31 @@
+services:
+  k6:
+    image: grafana/k6:latest
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./k6/script:/scripts:ro
+      - ./k6/results:/results
+    environment:
+      BASE_URL: ${BASE_URL:-http://host.docker.internal:8080}
+    command: run --summary-export=/results/result-summary.json /scripts/load-test.js
+
+  postgres:
+    image: postgres:18.0-alpine
+    container_name: midnight-test-postgres
+    env_file:
+      - .env
+    ports:
+      - "5496:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  postgres_data:
+    driver: local

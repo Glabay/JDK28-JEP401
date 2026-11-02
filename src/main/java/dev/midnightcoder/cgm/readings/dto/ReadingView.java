@@ -1,12 +1,12 @@
 package dev.midnightcoder.cgm.readings.dto;
 
-import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 public record ReadingView(
     UUID id,
     UUID sensorId,
-    long sequenceNumber,
-    Instant capturedAt,
-    int glucoseMgDl
+    Long sequenceNumber,
+    LocalDateTime capturedAt,
+    Double glucoseMgDl
 ) {}

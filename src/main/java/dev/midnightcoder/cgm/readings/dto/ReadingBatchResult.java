@@ -1,14 +1,14 @@
 package dev.midnightcoder.cgm.readings.dto;
 
-import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.UUID;
 
 public record ReadingBatchResult(
     UUID batchId,
-    int acceptedCount,
-    int duplicateCount,
-    Instant acceptedAt
+    Integer acceptedCount,
+    Integer duplicateCount,
+    LocalDateTime acceptedAt
 ) {
     public ReadingBatchResult {
         Objects.requireNonNull(batchId);

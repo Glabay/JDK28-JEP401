@@ -2,7 +2,7 @@ package dev.midnightcoder.cgm.sensors.internal;
 
 import jakarta.persistence.*;
 
-import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -34,13 +34,13 @@ public class Sensor {
     private SensorStatus status;
 
     @Column(nullable = false, updatable = false)
-    private Instant registeredAt;
+    private LocalDateTime registeredAt;
 
-    private Instant activatedAt;
+    private LocalDateTime activatedAt;
 
-    private Instant expiresAt;
+    private LocalDateTime expiresAt;
 
-    private Instant lastSeenAt;
+    private LocalDateTime lastSeenAt;
 
     @Version
     private long version;
@@ -52,21 +52,21 @@ public class Sensor {
         String serialNumber,
         String manufacturer,
         String model,
-        Instant expiresAt
+        LocalDateTime expiresAt
     ) {
         this.serialNumber = Objects.requireNonNull(serialNumber);
         this.manufacturer = Objects.requireNonNull(manufacturer);
         this.model = Objects.requireNonNull(model);
         this.expiresAt = expiresAt;
         this.status = SensorStatus.REGISTERED;
-        this.registeredAt = Instant.now();
+        this.registeredAt = LocalDateTime.now();
     }
 
     public static Sensor register(
         String serialNumber,
         String manufacturer,
         String model,
-        Instant expiresAt
+        LocalDateTime expiresAt
     ) {
         return new Sensor(
             serialNumber,
@@ -82,7 +82,7 @@ public class Sensor {
         ) throw new IllegalStateException("Sensor cannot be activated from status: " + status);
 
         status = SensorStatus.ACTIVE;
-        activatedAt = Instant.now();
+        activatedAt = LocalDateTime.now();
     }
 
     public void deactivate() {
@@ -96,7 +96,7 @@ public class Sensor {
         status = SensorStatus.REVOKED;
     }
 
-    public void markSeen(Instant receivedAt) {
+    public void markSeen(LocalDateTime receivedAt) {
         if (status != SensorStatus.ACTIVE)
             throw new IllegalStateException("Sensor is not active");
 
@@ -127,19 +127,19 @@ public class Sensor {
         return status;
     }
 
-    public Instant getRegisteredAt() {
+    public LocalDateTime getRegisteredAt() {
         return registeredAt;
     }
 
-    public Instant getActivatedAt() {
+    public LocalDateTime getActivatedAt() {
         return activatedAt;
     }
 
-    public Instant getExpiresAt() {
+    public LocalDateTime getExpiresAt() {
         return expiresAt;
     }
 
-    public Instant getLastSeenAt() {
+    public LocalDateTime getLastSeenAt() {
         return lastSeenAt;
     }
 

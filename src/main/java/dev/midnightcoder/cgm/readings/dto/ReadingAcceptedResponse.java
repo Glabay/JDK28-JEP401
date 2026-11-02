@@ -1,13 +1,13 @@
 package dev.midnightcoder.cgm.readings.dto;
 
-import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 public record ReadingAcceptedResponse(
     UUID batchId,
-    int acceptedCount,
-    int duplicateCount,
-    Instant acceptedAt
+    Integer acceptedCount,
+    Integer duplicateCount,
+    LocalDateTime acceptedAt
 ) {
 
     public static ReadingAcceptedResponse from(ReadingBatchResult result) {

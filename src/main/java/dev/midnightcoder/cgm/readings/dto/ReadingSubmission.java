@@ -1,9 +1,9 @@
 package dev.midnightcoder.cgm.readings.dto;
 
-import java.time.Instant;
+import java.time.LocalDateTime;
 
 public record ReadingSubmission(
-    long sequenceNumber,
-    Instant capturedAt,
-    int glucoseMgDl
+    Long sequenceNumber,
+    LocalDateTime capturedAt,
+    Double glucoseMgDl
 ) {}

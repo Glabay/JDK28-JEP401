@@ -3,7 +3,7 @@ package dev.midnightcoder.cgm.readings;
 import dev.midnightcoder.cgm.readings.dto.ReadingHistoryResult;
 import dev.midnightcoder.cgm.readings.dto.ReadingView;
 
-import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -13,9 +13,15 @@ public interface IReadingQueryService {
 
     ReadingHistoryResult findHistory(
             UUID sensorId,
-            Instant from,
-            Instant to,
+            LocalDateTime from,
+            LocalDateTime to,
             int limit
     );
+
+    Optional<Double> calculateAverageOverWeek(UUID sensorId);
+
+    Optional<Double> calculateAverageOverMonth(UUID sensorId);
+
+    Optional<Double> calculateAverageOverThreeMonths(UUID sensorId);
 
 }

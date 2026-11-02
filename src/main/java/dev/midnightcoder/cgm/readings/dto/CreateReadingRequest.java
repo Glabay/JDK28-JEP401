@@ -3,7 +3,7 @@ package dev.midnightcoder.cgm.readings.dto;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 
-import java.time.Instant;
+import java.time.LocalDateTime;
 
 /**
  * @author Glabay | The Midnight Coder
@@ -14,14 +14,14 @@ import java.time.Instant;
  */
 public record CreateReadingRequest(
     @Positive
-    long sequenceNumber,
+    Long sequenceNumber,
 
     @NotNull
-    Instant capturedAt,
+    LocalDateTime capturedAt,
 
     @NotNull
     @Positive
-    Integer glucoseMgDl
+    Double glucoseMgDl
 ) {
     public ReadingSubmission toSubmission() {
         return new ReadingSubmission(

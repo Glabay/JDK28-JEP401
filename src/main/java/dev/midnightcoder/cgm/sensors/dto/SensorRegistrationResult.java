@@ -1,6 +1,6 @@
 package dev.midnightcoder.cgm.sensors.dto;
 
-import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 /**
@@ -13,5 +13,5 @@ import java.util.UUID;
 public record SensorRegistrationResult(
     UUID sensorId,
     String status,
-    Instant registeredAt
+    LocalDateTime registeredAt
 ) {}

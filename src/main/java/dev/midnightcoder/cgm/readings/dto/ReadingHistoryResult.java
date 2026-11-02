@@ -1,15 +1,15 @@
 package dev.midnightcoder.cgm.readings.dto;
 
-import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
 public record ReadingHistoryResult(
     UUID sensorId,
-    Instant from,
-    Instant to,
-    int limit,
+    LocalDateTime from,
+    LocalDateTime to,
+    Integer limit,
     List<ReadingView> readings
 ) {
     public ReadingHistoryResult {

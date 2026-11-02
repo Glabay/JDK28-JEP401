@@ -1,6 +1,6 @@
 package dev.midnightcoder.cgm.sensors.dto;
 
-import java.time.Instant;
+import java.time.LocalDateTime;
 
 /**
  * @author Glabay | The Midnight Coder
@@ -13,5 +13,5 @@ public record SensorRegistration(
     String serialNumber,
     String manufacturer,
     String model,
-    Instant expiresAt
+    LocalDateTime expiresAt
 ) {}

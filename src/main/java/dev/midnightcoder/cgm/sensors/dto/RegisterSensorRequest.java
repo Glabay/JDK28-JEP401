@@ -4,7 +4,7 @@ import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
-import java.time.Instant;
+import java.time.LocalDateTime;
 
 /**
  * @author Glabay | The Midnight Coder
@@ -28,7 +28,7 @@ public record RegisterSensorRequest(
     String model,
 
     @Future(message = "Expiration date must be in the future")
-    Instant expiresAt
+    LocalDateTime expiresAt
 
 ) {
     public SensorRegistration toRegistration() {
